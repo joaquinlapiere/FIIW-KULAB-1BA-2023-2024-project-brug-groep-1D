@@ -3,7 +3,7 @@
   inputs = 
   {
       nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-#     python3112.url = "github:nixos/nixpkgs/96ba1c52e54e74c3197f4d43026b3f3d92e83ff9";
+      python3112.url = "github:nixos/nixpkgs/96ba1c52e54e74c3197f4d43026b3f3d92e83ff9";
   };
   outputs = { self, nixpkgs, ... }@inputs:
     let
@@ -17,9 +17,9 @@
         nativeBuildInputs = with pkgs; [
           cowsay #voor funny redenen
           jetbrains.pycharm-community
-#         inputs.python3112.legacyPackages.${system}.python311
-#         inputs.python3112.legacyPackages.${system}.python311Packages.matplotlib
-#         inputs.python3112.legacyPackages.${system}.python311Packages.numpy  
+          inputs.python3112.legacyPackages.${system}.python311
+          inputs.python3112.legacyPackages.${system}.python311Packages.matplotlib
+          inputs.python3112.legacyPackages.${system}.python311Packages.numpy  
         ];
     
     shellHook = ''
