@@ -17,6 +17,7 @@
         nativeBuildInputs = with pkgs; [
           cowsay #voor funny redenen
           jetbrains.pycharm-community
+	  arduino-ide
           inputs.python3112.legacyPackages.${system}.python311
           inputs.python3112.legacyPackages.${system}.python311Packages.matplotlib
           inputs.python3112.legacyPackages.${system}.python311Packages.numpy  
@@ -24,7 +25,7 @@
     
     shellHook = ''
     cowsay "welcom to pycharm shell"
-    pycharm-community
+#   pycharm-community
     '';
       };
     };
