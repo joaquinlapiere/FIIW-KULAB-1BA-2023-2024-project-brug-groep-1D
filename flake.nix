@@ -20,7 +20,8 @@
 	  arduino-ide
           inputs.python3112.legacyPackages.${system}.python311
           inputs.python3112.legacyPackages.${system}.python311Packages.matplotlib
-          inputs.python3112.legacyPackages.${system}.python311Packages.numpy  
+          inputs.python3112.legacyPackages.${system}.python311Packages.numpy
+	  inputs.python3112.legacyPackages.${system}.python311Packages.smbus2
         ];
     
     shellHook = ''
