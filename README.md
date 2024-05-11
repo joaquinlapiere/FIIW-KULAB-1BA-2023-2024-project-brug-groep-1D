@@ -9,4 +9,8 @@ De communicatie tussen de arduino en pi gebeurd volgens het I2C protocol. Hierbi
 
 
 ## Extra
+### Version controll met git
+Er wordt gebruik gemaakt van git version controll. Dit maakt het makkelijker om samen te werken en om de meest up-to-date bestanden op de raspberry pi te krijgen.
+
+### flake.nix en flake.lock
 In deze repository is een flake.nix en een flake.lock bestand aanwezig. Deze bestanden definiëren de project omgeving. Ze zorgen er voor dat je met iedere computer die de Nix packages manager kan gebruiken, in dezelfde omgeving kan werken (het installeert automatisch de juiste versie van pytho en de libs en ook de nodig IDE zoals de Arduino IDE en pycharm).
