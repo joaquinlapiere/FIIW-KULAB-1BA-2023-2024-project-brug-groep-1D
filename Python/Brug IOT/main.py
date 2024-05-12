@@ -1,7 +1,8 @@
-# This is a sample Python script.
+import html_generator
+import testing.sensor_simulation as sensor_simulation
+import time
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+i = 0
 
 
 def print_hi(name):
@@ -11,6 +12,8 @@ def print_hi(name):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    while i == 0:
+        sensor_simulation.generate_sensordata()
+        html_generator.generate_html()
+        time.sleep(5)
+        sensor_simulation.reset_data_list()
