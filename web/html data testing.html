@@ -1,20 +1,21 @@
 <html>
 <head>
-  <title>Brug IOT</title>
+    <meta charset="UTF-8">
+    <title>html testing</title>
  <script      
 src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 </script> 
 
 </head>
 <body>
-<h1>Generated sensor data</h1>
+<h1> (Generated) sensor data</h1>
 <canvas id="myChart" style="width:150%;max-width:1000px"></canvas>
 
 <script>
+const xValues = [50,60,70,80,90,100,110,120,130,140,150];
+const yValues = ["7","8","8","9","9","9","10","11","14","14","20"];
 
 new Chart("myChart", {
-
-
   type: "line",
   data: {
     labels: xValues,
