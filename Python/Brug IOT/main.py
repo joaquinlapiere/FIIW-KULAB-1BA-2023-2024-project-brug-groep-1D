@@ -5,15 +5,10 @@ import time
 i = 0
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    while i == 0:
+    while i < 15:
         sensor_simulation.generate_sensordata()
-        html_generator.generate_html()
-        time.sleep(5)
+        html_generator.generate_html(13)
+        time.sleep(3) # wait 3 sec, site only reloads every 3sec
         sensor_simulation.reset_data_list()
+        i += 1
