@@ -1,4 +1,4 @@
-from libraries import qwiicscale
+import qwiicscale
 import time
 
 
