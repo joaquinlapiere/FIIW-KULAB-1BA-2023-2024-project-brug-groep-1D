@@ -1,0 +1,1 @@
+/home/arthur/Working copies/FIIW-KULAB-1BA-2023-2024-project-brug-groep-1D/libraries/qwiicscale.py
