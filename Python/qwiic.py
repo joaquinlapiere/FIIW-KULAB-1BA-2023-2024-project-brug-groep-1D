@@ -3,7 +3,7 @@ import time
 
 
 def start_scale():
-    scale = qwiicscale.qwiicscale()
+    scale = qwiicscale.QwiicScale()
     if not scale.begin():
         print("opstarten mislukt")
         return None
