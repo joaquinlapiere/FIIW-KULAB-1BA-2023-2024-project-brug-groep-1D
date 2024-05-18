@@ -1,4 +1,4 @@
-#hopelijk fixt text toevoegen de problemen
+
 from __future__ import print_function
 
 import qwiic_i2c
