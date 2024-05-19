@@ -51,18 +51,23 @@ def read_weight(scale, calibration_factor, nul_gewicht):
     return gewicht
 
 
-scale = start_scale()
-if scale is None:
-    breakpoint(65)
+def meeting(aantal_meetingen):
+    scale = start_scale()
+    if scale is None:
+        breakpoint(71)
 
-calibration_factor, nul_gewicht = calibrate_scale(scale)
+    calibration_factor, nul_gewicht = calibrate_scale(scale)
 
-print("Starting weight measurement...")
-while True:
-    gewicht = read_weight(scale, calibration_factor, nul_gewicht)
-    print(f"Weight: {gewicht:.2f} grams")
-    time.sleep(1)
+    print("Starting weight measurement...")
+    for i in range(0, aantal_meetingen):
+        gewicht = read_weight(scale, calibration_factor, nul_gewicht)
+        print(f"Weight: {gewicht:.2f} grams")
+        time.sleep(1)
+        meetingen: list = [None]*aantal_meetingen
+        meetingen[i] = gewicht
+        i += 1
 
+    return meetingen
 
 #while True:
 #   sensorwaarde = qwiicscale.getReading()
