@@ -43,7 +43,7 @@ while True:
     elif optie == 4:
         Nulwaarde: int = scale.getReading()
         print(f"1 meting: {Nulwaarde}")
-        Nulwaarde = qwiic.getAverage(Average_Amount)
+        Nulwaarde = qwiic.getAverage(scale, Average_Amount)
         print(f"gemiddelde: {Nulwaarde}")
 
     elif optie == 9:
