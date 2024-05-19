@@ -7,7 +7,9 @@ Aantal_Iteraties: int = int(input('hoeveel iteraties?'))
 scale = qwiicscale.QwiicScale()
 
 while True:
-    optie: int = int(input("welke optie? [1] rauwe sensordata, [2]rauwe sensordata + tijd, [3] Nulwaarde, [9] eind"))
+    optie: int = int(input("welke optie? \n"
+                           "[1] rauwe sensordata [2]rauwe sensordata + tijd, [3] Nulwaarde,\n"
+                           "[4] waarde Nulwaarde [9] eind"))
     if optie == 1:
         i: int = 0
         for i in range(0, Aantal_Iteraties):
@@ -36,6 +38,12 @@ while True:
         for i in range(0, Aantal_Iteraties):
             waarde = scale.getReading() - Nulwaarde
             print(waarde)
+
+    elif optie == 4:
+        Nulwaarde: int = scale.getReading()
+        print(f"1 meting: {Nulwaarde}")
+        Nulwaarde = scale.getAverage(Average_Amount)
+        print(f"gemiddelde: {Nulwaarde}")
 
     elif optie == 9:
         break
