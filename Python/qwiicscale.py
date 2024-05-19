@@ -395,7 +395,7 @@ class QwiicScale(object):
             if (int(round(time.time()*1000.0)) - startTime > 1000):
               return (0) #Timeout - Bail with error
 
-            total /= averageAmount
+        total /= averageAmount
 
         return (total)
     '''
