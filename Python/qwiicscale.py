@@ -391,12 +391,11 @@ class QwiicScale(object):
               total += self.getReading()
               samplesAquired += 1
               if (samplesAquired == averageAmount):
-                total /= averageAmount #aanpassing
                 break #All done
             if (int(round(time.time()*1000.0)) - startTime > 1000):
               return (0) #Timeout - Bail with error
 
-            #total /= averageAmount
+            total /= averageAmount
 
         return (total)
     '''
