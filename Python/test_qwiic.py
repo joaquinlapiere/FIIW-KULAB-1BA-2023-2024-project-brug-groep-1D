@@ -1,4 +1,4 @@
-import qwiicscale
+import qwiic
 import datetime
 
 Average_Amount: int = 100
@@ -42,7 +42,7 @@ while True:
     elif optie == 4:
         Nulwaarde: int = scale.getReading()
         print(f"1 meting: {Nulwaarde}")
-        Nulwaarde = scale.getAverage(Average_Amount)
+        Nulwaarde = qwiic.getAverage(Average_Amount)
         print(f"gemiddelde: {Nulwaarde}")
 
     elif optie == 9:

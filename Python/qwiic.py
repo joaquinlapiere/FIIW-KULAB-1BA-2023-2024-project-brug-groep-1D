@@ -33,6 +33,17 @@ def calibrate_scale(scale):
 
     return calibration_factor, nul_gewicht
 
+def getAverage(scale, averageAmount):
+    total = 0
+
+    for i in range(0, averageAmount):
+        total += scale.getReading()
+        i +=1
+
+    total /= averageAmount
+
+    return total
+
 
 def read_weight(scale, calibration_factor, nul_gewicht):
     raw_value = scale.getAverage(Average_Amount)
