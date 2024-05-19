@@ -53,7 +53,7 @@ def read_weight(scale, calibration_factor, nul_gewicht):
 
 scale = start_scale()
 if scale is None:
-    breakpoint(54)
+    breakpoint(65)
 
 calibration_factor, nul_gewicht = calibrate_scale(scale)
 
