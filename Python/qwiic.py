@@ -1,7 +1,8 @@
 import qwiicscale
 import time
 
-Average_Amount: int = 100 #variabele die aanpast hoeveel getallen in de scale.getAverage() funcie gebruikt worden
+Average_Amount: int = 100  #variabele die aanpast hoeveel getallen in de scale.getAverage() funcie gebruikt worden
+
 
 def start_scale():
     scale = qwiicscale.QwiicScale()
@@ -20,8 +21,9 @@ def nul_waarde(scale):
     return nul_gewicht
 
 
-def calibrate_scale(scale, gekend_gewicht):
+def calibrate_scale(scale):
     nul_gewicht = nul_waarde(scale)
+    gekend_gewicht = float(input("hoe groot is het gewicht die zal gebruikt worden bij de kalibratie (in gram): "))
     print("plaats een gekende massa op het plaatje en duw op enter")
     input()
 
@@ -29,7 +31,7 @@ def calibrate_scale(scale, gekend_gewicht):
     calibration_factor = (raw_value - nul_gewicht) / gekend_gewicht
     print(f"Calibration factor: {calibration_factor}")
 
-    return calibration_factor
+    return calibration_factor, nul_gewicht
 
 
 def read_weight(scale, calibration_factor, nul_gewicht):
@@ -38,30 +40,23 @@ def read_weight(scale, calibration_factor, nul_gewicht):
     return gewicht
 
 
-def main():
-    scale = start_scale()
-    if scale is None:
-        return
+scale = start_scale()
+if scale is None:
+    breakpoint(54)
 
-    nul_gewicht = nul_waarde(scale)
-    gekend_gewicht = float(input("hoe groot is het gewicht die zal gebruikt worden bij de kalibratie (in gram): "))
-    calibration_factor = calibrate_scale(scale, gekend_gewicht)
+calibration_factor, nul_gewicht = calibrate_scale(scale)
 
-    print("Starting weight measurement...")
-    while True:
-        gewicht = read_weight(scale, calibration_factor, nul_gewicht)
-        print(f"Weight: {gewicht:.2f} grams")
-        time.sleep(1)
+print("Starting weight measurement...")
+while True:
+    gewicht = read_weight(scale, calibration_factor, nul_gewicht)
+    print(f"Weight: {gewicht:.2f} grams")
+    time.sleep(1)
 
 
-if __name__ == "__main__":
-    main()
-
-""" while True:
-    sensorwaarde = qwiicscale.getReading()
+#while True:
+#   sensorwaarde = qwiicscale.getReading()
 
     #raw_time = datetime.datetime.now()
     #tijd = str(raw_time.hour) + ":" + str(raw_time.minute) + ":" + str(raw_time.second)
 
-    print(sensorwaarde)
-"""
+#   print(sensorwaarde)
