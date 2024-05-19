@@ -17,7 +17,7 @@ def nul_waarde(scale):
     print("als er geen gewicht op het plaatje hangt, duw op enter:")
     input()
 
-    nul_gewicht = scale.getAverage(Average_Amount)
+    nul_gewicht = getAverage(scale, Average_Amount)
     return nul_gewicht
 
 
@@ -27,7 +27,7 @@ def calibrate_scale(scale):
     print("plaats een gekende massa op het plaatje en duw op enter")
     input()
 
-    raw_value = scale.getAverage(Average_Amount)
+    raw_value = getAverage(scale, Average_Amount)
     calibration_factor = (raw_value - nul_gewicht) / gekend_gewicht
     print(f"Calibration factor: {calibration_factor}")
 
@@ -46,7 +46,7 @@ def getAverage(scale, averageAmount):
 
 
 def read_weight(scale, calibration_factor, nul_gewicht):
-    raw_value = scale.getAverage(Average_Amount)
+    raw_value = getAverage(scale, Average_Amount)
     gewicht = (raw_value - nul_gewicht) / calibration_factor
     return gewicht
 
