@@ -28,7 +28,7 @@ while True:
         i: int = 0
         print("plaats geen gewicht en duw op enter")
         input()
-        Nulwaarde: int = scale.getAverage(Average_Amount)
+        Nulwaarde: int = scale.getReading()
 
         print("nulwaarde gemeten: druk enter")
         input()
