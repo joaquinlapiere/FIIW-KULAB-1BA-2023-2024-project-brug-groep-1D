@@ -32,8 +32,9 @@ while True:
 
         print("nulwaarde gemeten: druk enter")
         input()
+        waarde: int = 0
         for i in range(0, Aantal_Iteraties):
-            waarde: int = scale.getReading() - Nulwaarde
+            waarde = scale.getReading() - Nulwaarde
             print(waarde)
 
     elif optie == 9:
