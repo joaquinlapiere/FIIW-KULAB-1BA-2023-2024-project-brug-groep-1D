@@ -2,7 +2,7 @@ import qwiicscale
 import qwiic
 import datetime
 
-Average_Amount: int = 100
+Average_Amount: int = 10
 Aantal_Iteraties: int = int(input('hoeveel iteraties?'))
 
 scale = qwiicscale.QwiicScale()
