@@ -1,5 +1,5 @@
 # functie want moet uitgevoerd worden in de main functie
-def generate_html(value_position: int):  # value position indicates the position the values have in the html template
+def generate_html(value_position: int = 13):  # value position indicates the position the values have in the html template
     sensor_data = open("./sensordata.txt", "r")
     template = open("../web/data display website (template).html", "r", newline="\n")
     generated_site = open("../web/generated_site.html", "w")
@@ -23,5 +23,6 @@ def generate_html(value_position: int):  # value position indicates the position
 
     # write rest of the site
     generated_site.writelines(template_lines[value_position + 1:])
+    return generated_site
 
 generate_html(13)
