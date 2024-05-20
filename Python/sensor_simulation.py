@@ -47,3 +47,5 @@ def reset_data_list():
     global time_list
     data_list = []
     time_list = []
+
+generate_sensordata() # call function for testing
