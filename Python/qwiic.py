@@ -72,20 +72,15 @@ def meeting(scale, calibration_factor, nul_gewicht, meeting, time_stamp_list, aa
 
     for i in range(0, aantal_meetingen):
         gewicht = read_weight(scale, calibration_factor, nul_gewicht)
-        print(f"Weight: {gewicht:.2f} grams")
+        print(f"Weight: {gewicht:.2f} gram")
         if reading_interval:
             time.sleep(reading_interval)
         meeting[4*aantal_meetingen+i] = gewicht
         time_stamp_list[4*aantal_meetingen+i] = time.strftime('%H:%M')
         i += 1
-
+    print(meeting)
+    print(time_stamp_list)
     return meeting, time_stamp_list
-
-# functie om de lijsten te reseten
-def clear():
-    global time_stamp_list
-    time_stamp_list = []
-    return
 
 #while True:
 #   sensorwaarde = qwiicscale.getReading()
