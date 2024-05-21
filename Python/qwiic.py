@@ -38,6 +38,7 @@ def getAverage(scale, averageAmount):
 
     for i in range(0, averageAmount):
         total += scale.getReading()
+        time_stamp_list.append(time.strftime('%H:%M'))
         i +=1
 
     total /= averageAmount
@@ -77,7 +78,13 @@ def meeting(scale, calibration_factor, nul_gewicht, lijst, aantal_meetingen = aa
         lijst[4*aantal_meetingen+i] = gewicht
         i += 1
 
-    return lijst
+    return lijst, time_stamp_list
+
+# functie om de lijsten te reseten
+def clear():
+    global time_stamp_list
+    time_stamp_list = []
+    return
 
 #while True:
 #   sensorwaarde = qwiicscale.getReading()
