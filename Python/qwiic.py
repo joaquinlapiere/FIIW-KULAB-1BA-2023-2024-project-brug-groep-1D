@@ -38,7 +38,6 @@ def getAverage(scale, averageAmount):
 
     for i in range(0, averageAmount):
         total += scale.getReading()
-        i +=1
 
     total /= averageAmount
 
@@ -52,17 +51,16 @@ def read_weight(scale, calibration_factor, nul_gewicht):
 
 
 def start_lijst(aantal_meetingen):
-    lijst: list = [None] * (aantal_meetingen * 5)
+    lijst: list = [None]*(aantal_meetingen * 5)
     return lijst
 
 def lijst_opschuiven(lijst, aantal_meetingen):
     for i in range(0, aantal_meetingen):
         lijst[i] = lijst[aantal_meetingen + i]
-        lijst[aantal_meetingen + 1] = lijst[2*aantal_meetingen + i]
-        lijst[2*aantal_meetingen + 1] = lijst[3*aantal_meetingen + i]
-        lijst[3*aantal_meetingen + 1] = lijst[4*aantal_meetingen + i]
-        lijst[4*aantal_meetingen + 1] = None
-        i += 1
+        lijst[aantal_meetingen + i] = lijst[2*aantal_meetingen + i]
+        lijst[2*aantal_meetingen + i] = lijst[3*aantal_meetingen + i]
+        lijst[3*aantal_meetingen + i] = lijst[4*aantal_meetingen + i]
+        lijst[4*aantal_meetingen + i] = None
 
     return lijst
 
@@ -78,7 +76,6 @@ def meeting(scale, calibration_factor, nul_gewicht, meeting, time_stamp_list, aa
             time.sleep(reading_interval)
         meeting[4*aantal_meetingen+i] = gewicht
         time_stamp_list[4*aantal_meetingen+i] = time.strftime('%H:%M')
-        i += 1
     print(meeting)
     print(time_stamp_list)
     return meeting, time_stamp_list

@@ -9,4 +9,3 @@ time_stamp_list = qwiic.start_lijst(aantal_meetingen)
 
 for i in range(0, 6):
     meeting, time_stamp_list = qwiic.meeting(scale, calibration_factor, nul_gewicht, meeting, time_stamp_list)
-    i += 1
