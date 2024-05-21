@@ -1,11 +1,10 @@
-import qwiicscale
 import qwiic
 import datetime
 
 Average_Amount: int = 10
 Aantal_Iteraties: int = int(input('hoeveel iteraties?'))
 
-scale = qwiicscale.QwiicScale()
+scale = qwiic.start_scale()
 
 while True:
     optie: int = int(input("welke optie? \n"
