@@ -1,8 +1,8 @@
 import qwiicscale
 import time
 
-Average_Amount: int = 100  #variabele die aanpast hoeveel getallen in de scale.getAverage() funcie gebruikt worden
-
+Average_Amount: int = 500  #variabele die aanpast hoeveel getallen in de scale.getAverage() funcie gebruikt worden
+aantal_metingen: int = 50
 
 def start_scale():
     scale = qwiicscale.QwiicScale()
@@ -51,19 +51,33 @@ def read_weight(scale, calibration_factor, nul_gewicht):
     return gewicht
 
 
-def meeting(scale, calibration_factor, nul_gewicht, aantal_meetingen, reading_interval = None):
+def start_lijst(aantal_meetingen):
+    lijst: list = [None] * (aantal_meetingen * 5)
+    return lijst
 
-    print("Starting weight measurement...")
+def lijst_opschuiven(lijst, aantal_meetingen):
+    for i in range(0, aantal_meetingen):
+        lijst[i] = lijst[aantal_meetingen + i]
+        lijst[aantal_meetingen + 1] = lijst[2*aantal_meetingen + i]
+        lijst[2*aantal_meetingen + 1] = lijst[3*aantal_meetingen + i]
+        lijst[3*aantal_meetingen + 1] = lijst[4*aantal_meetingen + i]
+        lijst[4*aantal_meetingen + 1] = None
+
+    return lijst
+
+
+def meeting(scale, calibration_factor, nul_gewicht, lijst, aantal_meetingen = aantal_metingen, reading_interval = None):
+    lijst_opschuiven(lijst)
+
     for i in range(0, aantal_meetingen):
         gewicht = read_weight(scale, calibration_factor, nul_gewicht)
         print(f"Weight: {gewicht:.2f} grams")
         if reading_interval:
             time.sleep(reading_interval)
-        meetingen: list = [None]*aantal_meetingen
-        meetingen[i] = gewicht
+        lijst[4*aantal_meetingen+i] = gewicht
         i += 1
 
-    return meetingen
+    return lijst
 
 #while True:
 #   sensorwaarde = qwiicscale.getReading()
