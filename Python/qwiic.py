@@ -2,7 +2,6 @@ import qwiicscale
 import time
 
 Average_Amount: int = 400  #variabele die aanpast hoeveel getallen in de scale.getAverage() funcie gebruikt worden
-aantal_meetingen: int = 50
 
 def start_scale():
     scale = qwiicscale.QwiicScale()
@@ -52,7 +51,8 @@ def read_weight(scale, calibration_factor, nul_gewicht):
 
 def start_lijst(aantal_meetingen):
     lijst: list = [None]*(aantal_meetingen * 5)
-    print("lengte lijst =" + len(lijst))
+    lijststr =  [str(x) for x in lijst]
+    print("lengte lijst =" + len(lijststr))
     return lijst
 
 def lijst_opschuiven(lijst, aantal_meetingen):
@@ -66,7 +66,7 @@ def lijst_opschuiven(lijst, aantal_meetingen):
     return lijst
 
 
-def meeting(scale, calibration_factor, nul_gewicht, meeting, time_stamp_list, aantal_meetingen = aantal_meetingen, reading_interval = None):
+def meeting(scale, calibration_factor, nul_gewicht, meeting, time_stamp_list, aantal_meetingen, reading_interval = None):
     lijst_opschuiven(meeting, aantal_meetingen)
     lijst_opschuiven(time_stamp_list, aantal_meetingen)
 
