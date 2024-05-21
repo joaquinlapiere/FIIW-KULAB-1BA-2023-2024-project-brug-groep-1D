@@ -1,8 +1,8 @@
 import qwiicscale
 import time
 
-Average_Amount: int = 500  #variabele die aanpast hoeveel getallen in de scale.getAverage() funcie gebruikt worden
-aantal_metingen: int = 50
+Average_Amount: int = 400  #variabele die aanpast hoeveel getallen in de scale.getAverage() funcie gebruikt worden
+aantal_meetingen: int = 50
 
 def start_scale():
     scale = qwiicscale.QwiicScale()
@@ -38,7 +38,6 @@ def getAverage(scale, averageAmount):
 
     for i in range(0, averageAmount):
         total += scale.getReading()
-        time_stamp_list.append(time.strftime('%H:%M'))
         i +=1
 
     total /= averageAmount
@@ -67,18 +66,20 @@ def lijst_opschuiven(lijst, aantal_meetingen):
     return lijst
 
 
-def meeting(scale, calibration_factor, nul_gewicht, lijst, aantal_meetingen = aantal_metingen, reading_interval = None):
-    lijst_opschuiven(lijst)
+def meeting(scale, calibration_factor, nul_gewicht, meeting, time_stamp_list, aantal_meetingen = aantal_meetingen, reading_interval = None):
+    lijst_opschuiven(meeting, aantal_meetingen)
+    lijst_opschuiven(time_stamp_list, aantal_meetingen)
 
     for i in range(0, aantal_meetingen):
         gewicht = read_weight(scale, calibration_factor, nul_gewicht)
         print(f"Weight: {gewicht:.2f} grams")
         if reading_interval:
             time.sleep(reading_interval)
-        lijst[4*aantal_meetingen+i] = gewicht
+        meeting[4*aantal_meetingen+i] = gewicht
+        time_stamp_list[4*aantal_meetingen+i] = time.strftime('%H:%M')
         i += 1
 
-    return lijst, time_stamp_list
+    return meeting, time_stamp_list
 
 # functie om de lijsten te reseten
 def clear():
