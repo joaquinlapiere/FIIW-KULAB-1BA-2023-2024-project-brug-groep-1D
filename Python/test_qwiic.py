@@ -9,8 +9,8 @@ scale = qwiicscale.QwiicScale()
 
 while True:
     optie: int = int(input("welke optie? \n"
-                           "[1] rauwe sensordata [2]rauwe sensordata + tijd, [3] Nulwaarde,\n"
-                           "[4] waarde Nulwaarde [9] eind"))
+                           "[1] rauwe sensordata [2] rauwe sensordata + tijd, [3] Nulwaarde,\n"
+                           "[4] waarde Nulwaarde [5] read_value functie       [9] eind"))
     if optie == 1:
         i: int = 0
         for i in range(0, Aantal_Iteraties):
@@ -45,6 +45,11 @@ while True:
         print(f"1 meting: {Nulwaarde}")
         Nulwaarde = qwiic.getAverage(scale, Average_Amount)
         print(f"gemiddelde: {Nulwaarde}")
+
+    elif optie == 5:
+        calibration_factor, nul_gewicht = qwiic.calibrate_scale()
+        for i in range(0, Aantal_Iteraties):
+            sensorwaarde = qwiic.read_weight(scale, calibration_factor, nul_gewicht)
 
     elif optie == 9:
         break
