@@ -1,6 +1,6 @@
 import qwiic
 
-aantal_meetingen = 4
+aantal_meetingen = 11
 
 scale = qwiic.start_scale()
 calibration_factor, nul_gewicht = qwiic.calibrate_scale(scale)
