@@ -1,7 +1,9 @@
+from flask import Flask
 import motor_control as motor
 import html_generator as html
 import sensor_simulation as sensor
 
+app = Flask(__name__)
 
 # get sensordata
 sensor_data = sensor.generate_sensordata()  # temp testing (needs to get from qwiic)
