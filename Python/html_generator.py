@@ -1,8 +1,8 @@
 # functie want moet uitgevoerd worden in de main functie
 def generate_html(value_position: int = 13, xdata :list = None, ydata :list = None):  # value position indicates the position the values have in the html template
     sensor_data = open("./sensordata.txt", "r")
-    template = open("web/data display website (template).html", "r", newline="\n")
-    generated_site = open("web/generated_site.html", "w")
+    template = open("../web/data display website (template).html", "r", newline="\n")
+    generated_site = open("../web/generated_site.html", "w")
 
     # convert data from the files to lists
     timestamped_data = sensor_data.readlines()
