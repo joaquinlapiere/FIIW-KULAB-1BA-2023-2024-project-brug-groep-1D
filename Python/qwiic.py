@@ -52,6 +52,7 @@ def read_weight(scale, calibration_factor, nul_gewicht):
 
 def start_lijst(aantal_meetingen):
     lijst: list = [None]*(aantal_meetingen * 5)
+    print("lengte lijst =" + len(lijst))
     return lijst
 
 def lijst_opschuiven(lijst, aantal_meetingen):
