@@ -47,7 +47,7 @@ while True:
         print(f"gemiddelde: {Nulwaarde}")
 
     elif optie == 5:
-        calibration_factor, nul_gewicht = qwiic.calibrate_scale()
+        calibration_factor, nul_gewicht = qwiic.calibrate_scale(scale)
         for i in range(0, Aantal_Iteraties):
             sensorwaarde = qwiic.read_weight(scale, calibration_factor, nul_gewicht)
 
