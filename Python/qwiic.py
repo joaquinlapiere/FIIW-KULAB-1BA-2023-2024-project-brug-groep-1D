@@ -51,7 +51,7 @@ def read_weight(scale, calibration_factor, nul_gewicht):
     return gewicht
 
 
-def meeting(scale, calibration_factor, nul_gewicht, aantal_meetingen, reading_interval: int = None):
+def meeting(scale, calibration_factor, nul_gewicht, aantal_meetingen, reading_interval = None):
 
     print("Starting weight measurement...")
     for i in range(0, aantal_meetingen):
