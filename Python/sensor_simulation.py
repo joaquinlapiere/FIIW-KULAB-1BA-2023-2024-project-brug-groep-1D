@@ -40,6 +40,7 @@ def generate_sensordata():
     data_file.writelines(str(data_list))
 
     data_file.close()
+    return time_list, data_list  # return sensor data like the qwiic would
 
 # clear global lists
 def reset_data_list():
