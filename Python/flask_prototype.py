@@ -50,4 +50,4 @@ def brug_sluit():
 @app.route('/clear')
 def clear():
     qwiic.clear()
-    motor.brug_sluit()
+    return show_main_page()
