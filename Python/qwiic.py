@@ -51,12 +51,7 @@ def read_weight(scale, calibration_factor, nul_gewicht):
     return gewicht
 
 
-def meeting(aantal_meetingen):
-    scale = start_scale()
-    if scale is None:
-        breakpoint(71)
-
-    calibration_factor, nul_gewicht = calibrate_scale(scale)
+def meeting(scale, calibration_factor, nul_gewicht, aantal_meetingen):
 
     print("Starting weight measurement...")
     for i in range(0, aantal_meetingen):
