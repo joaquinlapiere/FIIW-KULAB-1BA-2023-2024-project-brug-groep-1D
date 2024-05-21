@@ -51,13 +51,13 @@ def read_weight(scale, calibration_factor, nul_gewicht):
     return gewicht
 
 
-def meeting(scale, calibration_factor, nul_gewicht, aantal_meetingen):
+def meeting(scale, calibration_factor, nul_gewicht, aantal_meetingen, reading_interval: int = None):
 
     print("Starting weight measurement...")
     for i in range(0, aantal_meetingen):
         gewicht = read_weight(scale, calibration_factor, nul_gewicht)
         print(f"Weight: {gewicht:.2f} grams")
-        time.sleep(1)
+        time.sleep(reading_interval)
         meetingen: list = [None]*aantal_meetingen
         meetingen[i] = gewicht
         i += 1
