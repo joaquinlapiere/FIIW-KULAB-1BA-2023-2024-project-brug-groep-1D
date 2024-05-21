@@ -62,6 +62,7 @@ def lijst_opschuiven(lijst, aantal_meetingen):
         lijst[2*aantal_meetingen + 1] = lijst[3*aantal_meetingen + i]
         lijst[3*aantal_meetingen + 1] = lijst[4*aantal_meetingen + i]
         lijst[4*aantal_meetingen + 1] = None
+        i += 1
 
     return lijst
 
