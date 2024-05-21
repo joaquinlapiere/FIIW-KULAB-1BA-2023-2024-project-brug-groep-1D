@@ -2,7 +2,9 @@ from flask import Flask
 import motor_control as motor
 import html_generator as html
 import sensor_simulation as sensor
+import qwiic
 
+scale = qwiic.start_scale()
 app = Flask(__name__)
 
 # get sensordata
@@ -24,15 +26,15 @@ website = html.generate_html(13,sensor_data[0],sensor_data[1])
 def show_main_page():
     global website
     global sensor_data
-
-    sensor_data = sensor.generate_sensordata()
-    website = html.generate_html(13,sensor_data[0],sensor_data[1])
+    sensor_data, time_stamp_list = qwiic.meeting(scale, calibration_factor, nul_gewicht, 100)  #argument in functie = aantal meetingen in lijst
+#    sensor_data = sensor.generate_sensordata()
+    website = html.generate_html(13,sensor_data,time_stamp_list)
     
     return website
 
 @app.route('/calibrate')
 def calibrate():
-    motor.calibrate()
+    calibration_factor, nul_gewicht = qwiic.calibrate_scale(scale)
     return show_main_page()
 
 @app.route('/brug_open')
@@ -45,11 +47,7 @@ def brug_sluit():
     motor.brug_sluit()
     return show_main_page()
 
-
-####################
-# temp for testing #
-####################
-brug_open()
-brug_sluit()
-calibrate()
-show_main_page()
+@app.route('/clear')
+def clear():
+    qwiic.clear()
+    motor.brug_sluit()

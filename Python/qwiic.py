@@ -2,7 +2,7 @@ import qwiicscale
 import time
 
 Average_Amount: int = 100  #variabele die aanpast hoeveel getallen in de scale.getAverage() funcie gebruikt worden
-
+time_stamp_list: list =[]
 
 def start_scale():
     scale = qwiicscale.QwiicScale()
@@ -38,6 +38,7 @@ def getAverage(scale, averageAmount):
 
     for i in range(0, averageAmount):
         total += scale.getReading()
+        time_stamp_list.append(time.strftime('%H:%M'))
         i +=1
 
     total /= averageAmount
@@ -60,9 +61,16 @@ def meeting(scale, calibration_factor, nul_gewicht, aantal_meetingen):
         time.sleep(1)
         meetingen: list = [None]*aantal_meetingen
         meetingen[i] = gewicht
+
         i += 1
 
-    return meetingen
+    return meetingen, time_stamp_list
+
+# functie om de lijsten te reseten
+def clear():
+    global time_stamp_list
+    time_stamp_list = []
+    return
 
 #while True:
 #   sensorwaarde = qwiicscale.getReading()
