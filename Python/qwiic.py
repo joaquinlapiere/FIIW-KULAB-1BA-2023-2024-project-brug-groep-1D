@@ -69,8 +69,8 @@ def meeting(scale, calibration_factor, nul_gewicht, meeting, time_stamp_list, aa
     lijst_opschuiven(time_stamp_list, aantal_meetingen)
 
     for i in range(0, aantal_meetingen):
-        gewicht = read_weight(scale, calibration_factor, nul_gewicht)
-        #print(f"Weight: {gewicht:.2f} gram")
+        gewicht: int = round(read_weight(scale, calibration_factor, nul_gewicht))
+        #print(f"Weight: {gewicht:.0f} gram")
         if reading_interval:
             time.sleep(reading_interval)
         meeting[4*aantal_meetingen+i] = gewicht
