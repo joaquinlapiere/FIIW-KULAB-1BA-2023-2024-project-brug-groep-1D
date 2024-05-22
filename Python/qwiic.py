@@ -70,13 +70,13 @@ def meeting(scale, calibration_factor, nul_gewicht, meeting, time_stamp_list, aa
 
     for i in range(0, aantal_meetingen):
         gewicht = read_weight(scale, calibration_factor, nul_gewicht)
-        print(f"Weight: {gewicht:.2f} gram")
+        #print(f"Weight: {gewicht:.2f} gram")
         if reading_interval:
             time.sleep(reading_interval)
         meeting[4*aantal_meetingen+i] = gewicht
         time_stamp_list[4*aantal_meetingen+i] = time.strftime('%H:%M:%S')
-    print(meeting)
-    print(time_stamp_list)
+    #print(meeting)
+    #print(time_stamp_list)
     return meeting, time_stamp_list
 
 #while True:
