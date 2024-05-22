@@ -32,8 +32,9 @@ def show_main_page():
     global time_stamp_list
     global aantal_meetingen
     sensor_data, time_stamp_list = qwiic.meeting(scale, calibration_factor, nul_gewicht, sensor_data, time_stamp_list, aantal_meetingen)  #argument in functie = aantal meetingen in lijst
-#    sensor_data = sensor.generate_sensordata()
-    website = html.generate_html(13,sensor_data,time_stamp_list)
+    max_sensor_data: int = round(max(sensor_data))
+    min_sensor_data: int = round(min(sensor_data))
+    website = html.generate_html(13,sensor_data,time_stamp_list, max_sensor_data, min_sensor_data)
     
     return website
 
