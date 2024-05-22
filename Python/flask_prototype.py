@@ -5,6 +5,7 @@ import sensor_simulation as sensor
 import qwiic
 
 aantal_meetingen = 5
+signal_delay = 1
 
 scale = qwiic.start_scale()
 app = Flask(__name__)
@@ -45,12 +46,12 @@ def calibrate():
 
 @app.route('/brug_open')
 def brug_open():
-    motor.brug_open() 
+    motor.brug_open(signal_delay) 
     return show_main_page()
 
 @app.route('/brug_sluit')
 def brug_sluit():
-    motor.brug_sluit()
+    motor.brug_sluit(signal_delay)
     return show_main_page()
 
 @app.route('/clear')
