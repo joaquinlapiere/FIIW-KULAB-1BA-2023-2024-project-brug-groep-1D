@@ -1,7 +1,7 @@
 # functie want moet uitgevoerd worden in de main functie
 def generate_html(value_position: int = 13, scale_position :int =31, xdata :list = None, ydata :list = None, xscale :int = 0, yscale :int = 300, debug :bool = False):  # value position indicates the position the values have in the html template
-    template = open("web/data display website (template).html", "r", newline="\n")
-    generated_site = open("web/generated_site.html", "w")
+    template = open("../web/data display website (template).html", "r", newline="\n")
+    generated_site = open("../web/generated_site.html", "w")
 
     # convert data from the files to lists
     template_lines = template.readlines()
