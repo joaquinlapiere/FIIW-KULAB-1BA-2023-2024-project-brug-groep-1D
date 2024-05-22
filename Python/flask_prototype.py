@@ -4,11 +4,14 @@ import html_generator as html
 import sensor_simulation as sensor
 import qwiic
 
+aantal_meetingen = 11
+
 scale = qwiic.start_scale()
 app = Flask(__name__)
 
-# get sensordata
-sensor_data = sensor.generate_sensordata()  # temp testing (needs to get from qwiic)
+calibration_factor, nul_gewicht = qwiic.calibrate_scale(scale)
+sensor_data = qwiic.start_lijst(aantal_meetingen)
+time_stamp_list = qwiic.start_lijst(aantal_meetingen)
 
 # print enkele vars zodat kan gecheckt worden als ze juist zijn
 def debugprint():
@@ -26,7 +29,9 @@ website = html.generate_html(13,sensor_data[0],sensor_data[1])
 def show_main_page():
     global website
     global sensor_data
-    sensor_data, time_stamp_list = qwiic.meeting(scale, calibration_factor, nul_gewicht, 100)  #argument in functie = aantal meetingen in lijst
+    global time_stamp_list
+    global aantal_meetingen
+    sensor_data, time_stamp_list = qwiic.meeting(scale, calibration_factor, nul_gewicht, sensor_data, time_stamp_list, aantal_meetingen)  #argument in functie = aantal meetingen in lijst
 #    sensor_data = sensor.generate_sensordata()
     website = html.generate_html(13,sensor_data,time_stamp_list)
     
