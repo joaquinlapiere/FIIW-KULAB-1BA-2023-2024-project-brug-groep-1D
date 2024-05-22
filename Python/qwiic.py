@@ -50,7 +50,7 @@ def read_weight(scale, calibration_factor, nul_gewicht):
 
 
 def start_lijst(aantal_meetingen):
-    lijst: list = [None]*(aantal_meetingen * 5)
+    lijst: list = [0]*(aantal_meetingen * 5)
     return lijst
 
 def lijst_opschuiven(lijst, aantal_meetingen):
@@ -59,7 +59,7 @@ def lijst_opschuiven(lijst, aantal_meetingen):
         lijst[aantal_meetingen + i] = lijst[2*aantal_meetingen + i]
         lijst[2*aantal_meetingen + i] = lijst[3*aantal_meetingen + i]
         lijst[3*aantal_meetingen + i] = lijst[4*aantal_meetingen + i]
-        lijst[4*aantal_meetingen + i] = None
+        lijst[4*aantal_meetingen + i] = 0
 
     return lijst
 
