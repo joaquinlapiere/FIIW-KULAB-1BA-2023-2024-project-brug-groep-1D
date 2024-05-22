@@ -4,7 +4,7 @@ import html_generator as html
 import sensor_simulation as sensor
 import qwiic
 
-aantal_meetingen = 11
+aantal_meetingen = 5
 
 scale = qwiic.start_scale()
 app = Flask(__name__)

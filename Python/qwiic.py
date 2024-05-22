@@ -1,7 +1,7 @@
 import qwiicscale
 import time
 
-Average_Amount: int = 400  #variabele die aanpast hoeveel getallen in de scale.getAverage() funcie gebruikt worden
+Average_Amount: int = 800  #variabele die aanpast hoeveel getallen in de scale.getAverage() funcie gebruikt worden
 
 def start_scale():
     scale = qwiicscale.QwiicScale()
