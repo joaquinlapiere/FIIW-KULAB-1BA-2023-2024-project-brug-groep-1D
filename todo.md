@@ -1,5 +1,5 @@
 # Laatste aanpassingen todo
--[] motor controll testen met pi en arduino
--[] sensordata weergeven op site
+-[x] motor controll testen met pi en arduino
+-[x] sensordata weergeven op site
 -[] Readme afwerken
 -[] html gen opkuisen

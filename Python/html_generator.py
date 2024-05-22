@@ -69,5 +69,3 @@ def debugprint(var1=None, var2=None, var3=None):
     if var3 != None:
         print("[type] y values: ", type(var3))
         print(var3)
-
-print(generate_html(13,31, [10,11,12], [1,2,3], 10, 10, 10))
