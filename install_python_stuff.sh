@@ -1,5 +1,5 @@
+# script om de meeste libs op de raspberry pi te installeren (maakt het makkelijker bij reïnstall)
 #!/usr/bin/bash
-
 
 sudo apt-get install python3-pip
 
@@ -12,6 +12,7 @@ sudo apt-get install python3-gi-cairo
 pip3 install cairocffi
 pip3 install matplotlib
 
+# check als alle modules installed zijn
 touch temp_programs.txt
 apt list > temp_programs.txt
 touch programs.txt

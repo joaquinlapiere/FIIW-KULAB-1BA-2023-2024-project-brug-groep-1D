@@ -1,3 +1,5 @@
+# eerste test versie om te kijken als het haalbaar is om met een webserver te werken
+
 from flask import Flask
 import html_generator as html
 import sensor_simulation

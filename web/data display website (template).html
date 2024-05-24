@@ -2,13 +2,13 @@
 <head>
   <title>Brug IOT</title>
  <script      
-src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"> // laad de lib om te plotten in
 </script> 
 
 </head>
 <body>
 <h1>Generated sensor data</h1>
-<canvas id="myChart" style="width:150%;max-width:1000px"></canvas>
+<canvas id="myChart" style="width:150%;max-width:1000px"></canvas> <!-- maak een html canvas om de grafiek op te plotten -->
 
 <script>
 
@@ -36,13 +36,13 @@ new Chart("myChart", {
     }
   }
 });
-// reload page to reload the data on the page
+// ga terug naar root pagina of herlaad deze als al op de root 
 setTimeout(() => {
 window.location.replace("/")
 }, 2000);
 
 </script>
-
+<!--knoppen met linken naar urls om acties uit te voeren met de webserver-->
 <a href='/brug_open'><button>Brug open</button></a>
 <a href='/brug_sluit'><button>Brug sluiten</button></a>
 <a href='/calibrate'><button>Rekstrook opnieuw calibreren</button></a>

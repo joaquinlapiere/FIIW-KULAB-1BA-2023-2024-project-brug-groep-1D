@@ -1,5 +1,6 @@
-import random
-import datetime
+# script die random sensor data genereert om te testen zonder qwiicscale sensor (vooral om data visualisatie te testen)
+import random  # module om "random" int's te maken
+import datetime  # module om timestamps te maken
 
 
 
@@ -13,10 +14,13 @@ data_list :list = [] # list for sensor data
 
 #readings :int = int(input("what amount of readings?"))
 
+# function to generate sensordata
 def generate_sensordata():
+    # import global vars into function
     global time_list
     global data_list
 
+    # open file to write sensor data
     data_file = open("./sensordata.txt","w")
 
     # get time
@@ -38,7 +42,7 @@ def generate_sensordata():
     data_file.writelines(str(time_list))
     data_file.writelines("\n")
     data_file.writelines(str(data_list))
-
+    # sluit de data file
     data_file.close()
     return time_list, data_list  # return sensor data like the qwiic would
 
