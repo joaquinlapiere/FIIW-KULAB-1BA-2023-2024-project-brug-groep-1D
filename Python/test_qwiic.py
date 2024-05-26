@@ -1,3 +1,13 @@
+"""
+Dit bestand wordt gebruikt om verschillende functies te testen.
+Het programma bestaat uit een grote lus die zal doorlopen worden totdat deze gestop wordt.
+In het begin van de lus wordt er gevraagd aan de gebruiken welke functie getest zal worden.
+Daarna zal deze functie een x aantal keer doorlopen worden. Hoeveel dat precies is,
+wordt aangegeven door de gebruiker in het begin van het programma en wordt neergeschreven in
+de variabele "Aantal_Iteraties".
+"""
+
+
 import qwiicscale
 import qwiic
 import datetime
@@ -49,7 +59,7 @@ while True:
     elif optie == 5:
         calibration_factor, nul_gewicht = qwiic.calibrate_scale(scale)
         for i in range(0, Aantal_Iteraties):
-            sensorwaarde = qwiic.read_weight(scale, calibration_factor, nul_gewicht)
+            sensorwaarde = qwiic.read_massa(scale, calibration_factor, nul_gewicht)
 
     elif optie == 9:
         break
