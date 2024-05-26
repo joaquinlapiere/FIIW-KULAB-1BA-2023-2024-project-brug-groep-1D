@@ -10,7 +10,8 @@ Tijdens het testen werd sensor data ook aangemaakt met een python script (\~/Pyt
 #### HTML generator
 De HTML die weergeven word is opgesteld aan de hand van een template, dit is een html bestand waar alles in staat die nodig is (standaard HTML structuur, opmaak, javascript code, knoppen met href naar url) behalve de sensorwaarden. Het html generator script (\~/Python/html_generator.py) deelt de template html op in 2 delen op de plaats waar de sensordata in de javascript code moet komen. De sensordata wordt ingevoerd na het eerste deel en het tweede deel wordt ingevoegd na de sensordata. De html wordt dan naar een nieuw bestand geschreven(\~/web/generated_site.html)  
 
-#### Qwiic
+#### Qwiicscale
+Om massa te meten werd er gebruik gemaakt van een qwiicscale i²c bordje. Dit bordje werdt aangestuurd via de zelfgeschreven qwiic (\~/Python/qwiic.py) bibliotheek die de door de KULAB geleverde qwiicscale (\~/Python/qwiicscale.py) bibliotheek bevat. Er is ook een testbestand (\~/Python/test_qwiic.py) gemaakt om verschilende functies van de bibliotheken te testen. het uitvoerbestand (\~/Python/uitvoeren qwiic.py) dient als template van hoe de qwiic bibliotheek geImplementeerd moet worden.
 
 ## Flask web server
 De data word weergegeven aan de hand van een webapp. Deze web app is gemaakt aan de hand van de python module flask. Dit is een verzameling van library's die het zeer makkelijk maken om een web applicatie op te zetten met python. (\~/Python/flask_server.py)  
