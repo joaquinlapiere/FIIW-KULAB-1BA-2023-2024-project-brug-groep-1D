@@ -34,6 +34,9 @@ Er wordt gebruik gemaakt van javascript om de data te plotten op een html canvas
 
 ## Extra
 
+### Technische uitdagingen
+Aangezien Python een dynamically typed language zijn we af en toe in contact gekomen met type errors ondanks de waarschuwingen in de lessen computationeel denken. Eens dat we door hadden dat dit het geval was waren we hier meer attent op en dit bespaarde veel tijd. De grootste uitdaging was het geheel opdelen ik kleine onderdelen zodat we er aan konden beginnen.
+
 ### Version controll met git
 Er wordt gebruik gemaakt van git versie beheer. Dit maakt het makkelijker om samen te werken en om de meest up-to-date bestanden op de raspberry pi te krijgen.
 
