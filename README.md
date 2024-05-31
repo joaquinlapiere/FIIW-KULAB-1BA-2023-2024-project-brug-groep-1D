@@ -22,9 +22,9 @@ Het Arduino-onderdeel beheert de brugsturing, verkeerslicht en buzzer op basis v
 De Arduino versie die gebruikt wordt is Arduino IDE 2.3.2.
 
 
-## Flask web server (A. Smalle)
-De data word weergegeven aan de hand van een webapp. Deze web app is gemaakt aan de hand van de python module flask. Dit is een verzameling van library's die het zeer makkelijk maken om een web applicatie op te zetten met python. (\~/Python/flask_server.py)
-De webserver moet gestart worden op de raspberry pi met een "speciaal" commando (dus niet gewoon: python3 flask_server.py)
+## Flask webserver (A. Smalle)
+De data word weergegeven op een webpagina de gehost wordt op een webserver. Deze webserver hebben we opgezet aan de hand van de python module flask. Dit is een verzameling van library's die het zeer makkelijk maken om een web applicatie op te zetten met python. (\~/Python/flask_server.py)
+De webserver moet gestart worden op de raspberry pi met een "speciaal" commando (dus niet gewoon: python3 flask_server.py). De commando gaat als volgt: *sudo python -m flask --app  ./flask_prototype.py run --host=0.0.0.0 --port=80*. Hierbij wordt de python aangeroepen op het systeem maar meer specifiek geven we de parameter -m flask, mee waardoor het de module flask gebruikt. Het laatste deel van het commande wijst er op dat het bestand ./flask_prototpye/py moet uitgevoerd worden en --host=0.0.0.0 en --port=80 wijzen er op dat de webserver gestart moet worden met de standaard IP op poort 80.
 
 ### HTML (A. Smalle)
 De web app geeft een html bestand weer. Deze bevat knoppen die verwijzen naar urls om zo acties uit te voeren met de webapp aangezien deze een HTTP request doen die de web app kan detecteren. Er zijn verschillende urls om verschillende acties uit te voeren zoals de brug openen en sluiten.  
