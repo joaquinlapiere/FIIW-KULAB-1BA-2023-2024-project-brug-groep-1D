@@ -39,8 +39,10 @@ Er wordt gebruik gemaakt van javascript om de data te plotten op een html canvas
 
 ### Technische uitdagingen
 Aangezien Python een dynamically typed language zijn we af en toe in contact gekomen met type errors ondanks de waarschuwingen in de lessen computationeel denken. Eens dat we door hadden dat dit het geval was waren we hier meer attent op en dit bespaarde veel tijd. De grootste uitdaging was het geheel opdelen ik kleine onderdelen zodat we er aan konden beginnen.
+Het installeren van de raspberrypi en het begrijpen hoe hier mee moet gewerkt worden was ook een van de grote obstakels voor diegene die hier geen ervaring mee hadden. Eenmaal we dit onder de knie hadden was het wel fijn van een extra skill te hebben. Het gebruiken en installeren van git op de pi heeft ons tijd gespaard en maakte het mogelijk om zeker te zijn dat we altijd de laatste versie van de code aan het testen waren.
+Bij het maken van de motorcontroller met mosfets zijn we ook wat vertraagt omdat de schakeling minder eenvoudig was dan gedacht.
+Het implementeren van alle onderdelen en deze samen laten werken met elkaar ging bijna vlekkeloos. Grootendeels te danken aan de goede afspraken die we op voorhand gemaakt hebben rond de implemantatie en hoe we dit gingen aanpakken.
 
-<<<<<<< Updated upstream
 ### Version controll met git
 Er wordt gebruik gemaakt van git versie beheer. Dit maakt het makkelijker om samen te werken en om de meest up-to-date bestanden op de raspberry pi te krijgen.
 
@@ -67,13 +69,3 @@ Een script die aan de hand van I2C data naar de arduino stuurt. Was een eventuel
 
 #### original testing template.html (A. Smalle)
 De eerste html die gebruikt werd als template. Hier werden verschillende methodes getest om data weer te geven (waarvan chart.js het makkelijkste en overzichtelijkste bleek). Er werd ook nog getest om eventueel tekst te gebruiken als grafiek (hoe hoger de waarde hoe meer symbolen op de lijn van het tijdstip).
-=======
-### flake.nix en flake.lock
-In deze repository is een flake.nix en een flake.lock bestand aanwezig. Deze bestanden definiëren de project omgeving. Ze zorgen er voor dat je met iedere computer die de Nix packages manager kan gebruiken, in dezelfde omgeving kan werken (het installeert automatisch de juiste versie van pytho en de libs en ook de nodig IDE zoals de Arduino IDE en pycharm).
-
-### uitdagingen
-Het meest uitdagende aan dit deel van het project was het instellen van de pi. ervoor zorgen dat alles deftig geïnstaleerd is en correct werkt heeft iemand zonder ervaring een volledige dag bezig gehouden. Gelukkig was het overzetten van bestanden achteraf makkelijker omdat we ook git hadden geïnstalleerd op de raspberry pi dus dit heeft dan ook weer tijd bespaard. Ook het werkende krijgen van de H-Brug in het arduino gedeelte was een van de grote struikelblokken omdat het werken met mosfets ook volledig nieuw was. De integratie van alle onderdelen (arduino, qwiicscal, website, ...) zijn bijna vlekkeloos gegaan door goede communicatie voorheen en duidelijke afspraken rond de implementatie.
-
-### wie deed wat
-
->>>>>>> Stashed changes
