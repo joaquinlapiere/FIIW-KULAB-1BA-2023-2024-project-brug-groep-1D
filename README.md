@@ -53,6 +53,12 @@ De flake.lock wordt automatisch gegenereerd door nix op basis van de flake.nix. 
 ### install_python_stuff.sh (A. Smalle)
 Een bash scriptje die de nodige library's installeert adhb de apt pacakge manager. (Gewoon een bash script met de install commandos uit de opgaven). Dit scriptje maakt het makkelijker om alles te installeren op verschillende raspberry pi en om het systeem opnieuw op te zetten bij het opnieuw installeren.
 
+### presentatie_Groep1D.pptx (iedereen)
+De powerpointpresentatie die gebruikt is tijdens het presenten van het project bevat een verdieping van ons deel van elektronica-ICT. Deze bevat ook een samenvatting van de andere onderdelen van het project.
+
+### project.pdf (W. Cocquyt)
+de schetsen die we in het begin uitgetekend hebben om te beslissen voor welk ontwerp we gingen gaan. Uiteindelijk hebben we beslist van te gaan voor het derde ontwerp met de boog vanonder. deze is dan verder uitgetekend in verschillende aanzichten.
+
 ### Ongebruikte prototype bestanden
 
 #### sensor_simulation.py (A. Smalle)
